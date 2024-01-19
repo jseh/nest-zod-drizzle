@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import * as schema from '../schema';
+import * as schema from '../db/schema';
 import { DrizzleMySqlModule } from '@knaadh/nestjs-drizzle-mysql2';
+import { AnotherController } from './another.controller';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -28,7 +29,7 @@ import { DrizzleMySqlModule } from '@knaadh/nestjs-drizzle-mysql2';
       inject: [ConfigService],
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, AnotherController],
   providers: [AppService],
 })
 export class AppModule {}

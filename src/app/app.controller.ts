@@ -3,8 +3,8 @@ import { AppService } from './app.service';
 import { CreateCatDto, createCatSchema } from '../dtos/create-cat.dto';
 import { ZodValidationPipe } from '../dtos/zod-validation.pipe';
 import { MySql2Database } from 'drizzle-orm/mysql2';
-import * as schema from '../schema';
-import { usuarios } from '../schema';
+import * as schema from '../db/schema';
+import { usuarios } from '../db/schema';
 
 @Controller()
 export class AppController {
