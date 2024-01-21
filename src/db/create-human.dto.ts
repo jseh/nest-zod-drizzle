@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const createCatSchema = z
+export const createHumanSchema = z
   .object({
     guid: z.string().trim(),
     person: z.object({
@@ -12,4 +12,4 @@ export const createCatSchema = z
   });
   // .required();
 
-export type CreateCatDto = z.infer<typeof createCatSchema>;
+export type CreateHumanDto = z.infer<typeof createHumanSchema>;
